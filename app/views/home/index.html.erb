@@ -1,0 +1,8 @@
+<%= form_tag extract_content_path, multipart: true do %>
+  <%= file_field_tag :pdf_file %>
+  <%= submit_tag "Extract Content" %>
+<% end %>
+<hr />
+<% if @content %>
+  <pre><%= @content %></pre>
+<% end %>
