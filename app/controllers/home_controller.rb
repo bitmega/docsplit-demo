@@ -20,7 +20,7 @@ class HomeController < ApplicationController
     end
     
     # Extract the content from the PDF file
-    Docsplit.extract_text(file_path, :ocr => false, output: Rails.root.join('tmp'))
+    Docsplit.extract_text(file_path, :ocr => true, output: Rails.root.join('tmp'))
 
     # Read the extracted text from the output file
     output_path = Rails.root.join("tmp", "#{File.basename(file_path, ".pdf")}.txt")
